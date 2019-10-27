@@ -11,10 +11,14 @@ public class Service {
 
     public List<Integer> getNumber(ModelNumber modelNumber) {
         int i = 0;
-        while (Math.pow(i, i) < modelNumber.getNumber()) {
+        while ((i * i) < modelNumber.getNumber()) {
             listOfIntegers.add(i);
             i++;
         }
         return listOfIntegers;
+    }
+
+    public void clearListOfNumbers() {
+        listOfIntegers.clear();
     }
 }
