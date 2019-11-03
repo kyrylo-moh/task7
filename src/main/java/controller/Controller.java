@@ -36,12 +36,11 @@ public class Controller {
     }
 
     public void runController() {
-        Scanner scanner = new Scanner(System.in);
         String answer;
         do {
             numberSequence();
             output.printQuestion();
-            answer = scanner.nextLine();
+            answer = input.getAnswer();
         } while (answer.equalsIgnoreCase("y") ||
                 answer.equalsIgnoreCase("yes"));
     }

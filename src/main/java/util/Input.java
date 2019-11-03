@@ -16,4 +16,8 @@ public class Input {
         return 0;
     }
 
+    public String getAnswer() {
+        return scanner.next();
+    }
+
 }
