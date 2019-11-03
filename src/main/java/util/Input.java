@@ -6,14 +6,25 @@ import java.util.Scanner;
 public class Input {
 
     private Scanner scanner = new Scanner(System.in);
+    private Validator validator = new Validator();
+    private Output output = new Output();
 
-    public int getNumber() {
-        try {
-            return scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println(e.getMessage());
+    public int getInt() {
+        int num;
+        output.printInformation();
+        if (scanner.hasNextInt()) {
+            num = scanner.nextInt();
+            if (!validator.isPositiveNumber(num)) {
+                output.printNotZero();
+                scanner.next();
+                num = getInt();
+            }
+        } else {
+            output.printInstruction();
+            scanner.next();
+            num = getInt();
         }
-        return 0;
+        return num;
     }
 
     public String getAnswer() {

@@ -2,11 +2,11 @@ package util;
 
 public class Output {
 
-    public void printInstruction() {
+    void printInstruction() {
         System.out.println("You entered incorrect value. Please try again");
     }
 
-    public void printInformation() {
+    void printInformation() {
         System.out.println("Please enter value (integer): ");
     }
 
@@ -18,4 +18,7 @@ public class Output {
         System.out.println("\nDo you want continue? [Yes/No]");
     }
 
+    void printNotZero() {
+        System.out.println("Value must be not less than 0");
+    }
 }
